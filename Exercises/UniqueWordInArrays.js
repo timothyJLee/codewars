@@ -1,4 +1,5 @@
 /*
+   ******IN PROGRESS******
 Given an array of string arrays, find all the words that only appear in a single array
 ex: [['mshike','mko','mshike','bozho'],['mshike','bamapi']] 
         returns ['mko','bozho','bamapi']
