@@ -13,9 +13,8 @@ function solution(number) {
     return 0;
   }
 
-  let i = 2;
   let sum = 0;
-  while (i !== number) {
+  for(let i = 2; i < number; i++){
     if (i % 5 === 0 || i % 3 === 0) {
       sum += i; // using modulus to find remainder of zero then summing i
     }

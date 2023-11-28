@@ -26,10 +26,9 @@ Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 1
 function alphabetPosition(text) {
   //
   splitString = processString(text);  //remove extra characters from string
-  let [replacedArray, replacedASCII] = ["", ""];
-  let i = 0;
-
-  while (i !== splitString.length) { //iterate through chars in string
+  let [replacedArray, replacedASCII] = ["", ""]
+  
+  for(let i = 0; i < splitString.length; i++){
     replacedArray += replaceStringArray(splitString.charAt(i)) + " ";   // 1st method
     replacedASCII += replaceStringASCII(splitString.charAt(i)) + " ";  //2nd method
     i++;
