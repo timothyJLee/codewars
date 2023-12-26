@@ -28,25 +28,16 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
   */
 
-const numsArray = [[2, 7, 11, 15],
-              [3, 2, 4],
-              [3, 3]];
-const targets = [9, 6, 6];
-
+// hash table implementation for realtime lookup providing for O(n) time complexity
 function twoSum(nums, target) {
-  let hashMap = {};
+  let hashMap = {};  // Create hash table object
 
-  for (let i = 0; i < nums.length; i++) {
-    complement = target - nums[i];
-    if (hashMap[complement] !== undefined) {
-      return [hashMap[complement], i];
+  for (let i = 0; i < nums.length; i++) {      // iterate through nums array
+    complement = target - nums[i];             // complement to search for in hashtable
+    if (hashMap[complement] !== undefined) {   // if complement exists in hashtable
+      return [hashMap[complement], i];         // returnn indices of nums array that show a pair   
     }
-      hashMap[nums[i]] = i;
+      hashMap[nums[i]] = i;    // otherwise add complement to hashmap as key to the value that is the array index
   }
-    return [-1, -1];
+    return [-1, -1];   // return error if no pairs found
 }
-
-for(let i = 0; i < targets.length; i++){
-twoSum(numsArray[i], targets[i]);
-}
-
