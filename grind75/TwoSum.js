@@ -1,6 +1,5 @@
 /*
   1. Two Sum
-  ***In Progress***
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
@@ -37,21 +36,13 @@ const targets = [9, 6, 6];
 function twoSum(nums, target) {
   let hashMap = {};
 
-  console.log("nums and target: " + nums + " " + target);
-
   for (let i = 0; i < nums.length; i++) {
     complement = target - nums[i];
-      console.log("complement: " + complement);
     if (hashMap[complement] !== undefined) {
-      console.log([hashMap[complement], i]);
       return [hashMap[complement], i];
     }
       hashMap[nums[i]] = i;
-      console.log("hashMap[nums[i]]: " + hashMap[nums[i]]);
-      console.log("nums[i]: " + nums[i]);
-      console.log(hashMap);
   }
-    console.log("err");
     return [-1, -1];
 }
 
