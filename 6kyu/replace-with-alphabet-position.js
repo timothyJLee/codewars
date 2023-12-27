@@ -50,7 +50,7 @@ function replaceStringASCII(char) {
 
 function processString(string) {
   let processedString = string
-    .replace(/[^A-Za-z]/g, "") //replace non word with nothing
+    .replace(/[^A-Za-z]/g, "") //regex replace non word with nothing
     .toLowerCase() //all letters to lowercase
     .replaceAll(" ", ""); //replace all spaces with nothing
   return processedString; //return string
