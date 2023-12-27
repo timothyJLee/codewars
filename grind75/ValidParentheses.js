@@ -38,24 +38,31 @@ SOLUTION:
 - return true
 */
 
+const inputs = ["()", "()[]{}", "(]"];
 const parentheses = {
   "(": ")",
   "[": "]",
   "{": "}",
 };
-function validParentheses(string) {
+
+for(let i = 0; i<inputs.length; i++){
+    isValid(inputs[i]);
+}
+
+function isValid(s) {
   let stack = []; // Create stack array
 
- string.forEach((char) => {
-   // if(Object.keys(parentheses).filter((key) => key === char)){}
+ s.split(" ").forEach((char) => {
+   // if(Object.keys(parentheses).includes(char)){}
    if (parentheses[char] !== undefined) {
     stack.push(char);
-   } else if (true/*closing parentheses*/){
-    if(true/*stack empty*/) { return false; }
-    if (!Object.values(parentheses).filter((key) => key == stack.pop()) /*no match*/) { return false; }
+   } else if (Object.values(parentheses).includes(char)/*closing parentheses*/){
+    if(stack.length = 0/*stack empty*/) { return false; }
+    if (!Object.values(parentheses).includes(stack.pop()) /*no match*/) { return false; }
    } else /*non parentheses*/ {
     return false;
    }
  });
+ console.log(true);
  return true;
 }
