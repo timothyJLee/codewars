@@ -28,7 +28,7 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
   */
 
-// hash table implementation for realtime lookup providing for O(n) time complexity
+// hash table implementation for constant lookup providing for O(n) time complexity
 function twoSum(nums, target) {
   let hashMap = {};  // Create hash table object
 
@@ -39,5 +39,5 @@ function twoSum(nums, target) {
     }
       hashMap[nums[i]] = i;    // otherwise add complement to hashmap as key to the value that is the array index
   }
-    return [-1, -1];   // return error if no pairs found
+    return "err";   // return error if no pairs found
 }
