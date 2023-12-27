@@ -51,9 +51,11 @@ function validParentheses(string) {
    if (parentheses[char] !== undefined) {
     stack.push(char);
    } else if (true/*closing parentheses*/){
-
-   } else if (true/*no parentheses*/){
-
+    if(true/*stack empty*/) { return false; }
+    if (!Object.values(parentheses).filter((key) => key == stack.pop()) /*no match*/) { return false; }
+   } else /*non parentheses*/ {
+    return false;
    }
  });
+ return true;
 }
