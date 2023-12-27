@@ -19,10 +19,9 @@ const cleanedObj = (() => {     // arrow IIFE
   return cleaned;
 })();
 
-console.log(cleanedObj);
-
-
+//console.log(cleanedObj);
  //singleArrayWords(array);
+ singleArrayWordsHashmap(cleanedObj);
 
 function singleArrayWords(wordSetsObj) {
   // single word array
@@ -48,9 +47,11 @@ function singleArrayWordsBuiltIn(wordSetsObj) {
 }
 
 function singleArrayWordsHashmap(wordSetsObj) {
+  let hashmap = {};
   wordSetsObj.forEach((wordArray) => {
     wordArray.forEach((word) => {
       // counting hashmap object
+      console.log(word);
     });
   });
 }
