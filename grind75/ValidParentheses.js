@@ -1,6 +1,4 @@
 /*
-
-**********IN PROGRESS**********
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
@@ -39,30 +37,37 @@ SOLUTION:
 */
 
 const inputs = ["()", "()[]{}", "(]"];
-const parentheses = {
-  "(": ")",
-  "[": "]",
-  "{": "}",
-};
 
-for(let i = 0; i<inputs.length; i++){
-    isValid(inputs[i]);
+for (let i = 0; i < inputs.length; i++) {
+  isValid(inputs[i]);
 }
 
 function isValid(s) {
+  const parentheses = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+
   let stack = []; // Create stack array
 
- s.split(" ").forEach((char) => {
-   // if(Object.keys(parentheses).includes(char)){}
-   if (parentheses[char] !== undefined) {
-    stack.push(char);
-   } else if (Object.values(parentheses).includes(char)/*closing parentheses*/){
-    if(stack.length = 0/*stack empty*/) { return false; }
-    if (!Object.values(parentheses).includes(stack.pop()) /*no match*/) { return false; }
-   } else /*non parentheses*/ {
-    return false;
-   }
- });
- console.log(true);
- return true;
+  for (let i = 0; i < s.length; i++) {
+    // if(Object.keys(parentheses).includes(s[i])){}
+    if (parentheses[s[i]] !== undefined) {
+      /* Open Parentheses */
+      stack.push(s[i]);
+    } else if (
+      Object.values(parentheses).includes(s[i]) /*closing parentheses*/
+    ) {
+      if (stack.length == 0 /*stack empty*/) {
+        return false;
+      }
+      if (parentheses[stack.pop()] !== s[i] /*no match*/) {
+        return false;
+      }
+    } else if (!Object.values(parentheses).includes(s[i]) /*non parentheses*/) {
+      return false;
+    }
+  }
+  return true;
 }
