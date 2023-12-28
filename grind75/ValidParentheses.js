@@ -69,5 +69,7 @@ function isValid(s) {
       return false;
     }
   }
-  return true;
+
+  if (stack.length == 0) return true;
+  else return false;
 }
