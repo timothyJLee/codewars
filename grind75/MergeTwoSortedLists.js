@@ -37,8 +37,8 @@ Both list1 and list2 are sorted in non-decreasing order.
       this.next = (next===undefined ? null : next)
   }
 
-lists1 = [[1,2,4],[],[]];
-lists2 = [[1,3,4],[],[0]];
+//const lists1 = [[1,2,4],[],[]];
+//const lists2 = [[1,3,4],[],[0]];
 
 function mergeTwoLists(list1, list2) {
     let mergedList = new ListNode();

@@ -33,7 +33,7 @@ function twoSum(nums, target) {
   let hashMap = {};  // Create hash table object
 
   for (let i = 0; i < nums.length; i++) {      // iterate through nums array
-    complement = target - nums[i];             // complement to search for in hashtable
+    let complement = target - nums[i];             // complement to search for in hashtable
     if (hashMap[complement] !== undefined) {   // if complement exists in hashtable
       return [hashMap[complement], i];         // returnn indices of nums array that show a pair   
     }
