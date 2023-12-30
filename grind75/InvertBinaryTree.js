@@ -27,7 +27,7 @@ function TreeNode(val, left, right) {
 
 function invertTree(root) {
   if (root === null) {
-    return null;
+    return root;
   }
 
   /*let temp = root.left;
@@ -37,6 +37,6 @@ function invertTree(root) {
 
   invertTree(root.left);
   invertTree(root.right);
-
+  
   return root;
 }
