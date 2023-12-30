@@ -35,13 +35,14 @@ const input = [
 function maxProfit(prices) {
     let profit = 0;
     let buyLow = prices[0];
-    for(let i=0; i<prices.length; i++){
-        if(prices[i] < buyLow){
-            buyLow = prices[i];
+    for (let i = 0; i < prices.length; i++) {
+      if (prices[i] < buyLow) {
+        buyLow = prices[i];
+      } else {
+        if (profit < prices[i] - buyLow) {
+          profit = prices[i] - buyLow;
         }
-        if(profit < prices[i] - buyLow){
-            profit = prices[i] - buyLow;
-        }        
+      }
     }
     return profit;
 }
