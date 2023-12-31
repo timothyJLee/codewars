@@ -48,5 +48,3 @@ function isAnagram(s, t) {
     else
     return false;
 }
-
-isAnagram("PussyWillowgdd", "PillowyWuss");
