@@ -41,7 +41,7 @@ function binarySearchRecursive(nums, target) {
   let [min, max] = [0, nums.length - 1];
   let avg = Math.floor((max + min) / 2);
 
-  (function binSearch(min, max) {
+  (function binSearch(min, max) {  // recursive named function as IIFE
     if (min > max) {
       avg = -1;
       return;
