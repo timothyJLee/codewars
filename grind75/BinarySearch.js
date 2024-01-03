@@ -26,8 +26,6 @@ function binarySearch(nums, target) { //iterative
 
     while (!(min > max)) {
       let avg = Math.floor((max + min) / 2);
-      console.log("min: " + min + "  max: " + max + "  avg " + avg);
-      console.log("nums[avg]: " + nums[avg] + "  target: " + target);
       if (target < nums[avg]) {
         max = avg - 1;
       } else if (target > nums[avg]) {
