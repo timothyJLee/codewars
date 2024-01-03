@@ -37,8 +37,24 @@ function binarySearch(nums, target) { //iterative
     return -1;
 }
 
-function binarySearchRecursive(nums, target){ //recursive
-    let [min, max] = [0, nums.length - 1];
-}
+function binarySearchRecursive(nums, target) {
+  let [min, max] = [0, nums.length - 1];
+  let avg = Math.floor((max + min) / 2);
 
-binarySearch([0,1,2,3,4,5,6,16,19,20,24,25,26,80,30], 6);
+  (function binSearch(min, max) {
+    if (min > max) {
+      avg = -1;
+      return;
+    }
+    avg = Math.floor((max + min) / 2);
+    if (target < nums[avg]) {
+      binSearch(min, avg - 1);
+    } else if (target > nums[avg]) {
+      binSearch(avg + 1, max);
+    } else if (target == nums[avg]) {
+      return;
+    }
+  })(0, nums.length - 1);
+
+  return avg;
+}
