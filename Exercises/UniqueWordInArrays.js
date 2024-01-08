@@ -17,7 +17,7 @@ const array = [
 
 // cleaning individual arrays of multiple values because we dont care about those
 // converting to Obj
-const cleanedObj = (() => {     // arrow IIFE
+const cleanedObj = (() => {     
   let cleaned = [];
   array.forEach((wordArray) => {
     cleaned.push([...new Set(wordArray)]); //Sets only have unique values
