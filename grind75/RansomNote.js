@@ -21,16 +21,14 @@ ransomNote and magazine consist of lowercase English letters.
 */
 
 const canConstruct = function (ransomNote, magazine) {
-
   if (ransomNote == undefined || magazine == undefined) return false;
 
-
   // Make counting hashmap of magazine string
-    let hm = {};
-  for(let i = 0; i < magazine.length; i++){
+  let hm = {};
+  for (let i = 0; i < magazine.length; i++) {
     hm[magazine[i]] = hm[magazine[i]] == undefined ? 1 : hm[magazine[i]] + 1;
   }
-console.log(hm);
+
   // loop through ransomNote
   // if not hashmap index match, return false
   // When ransomNote matches index in hashmap, check if count is > 0
@@ -44,5 +42,3 @@ console.log(hm);
 
   return true;
 };
-
-canConstruct("hello", "Hellooo");
