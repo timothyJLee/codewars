@@ -41,5 +41,3 @@ const addBinary = function (a, b) {
     }
     return (carry == 1) ? result.join("").padStart(leading+1, 1) : result.join("");
 };
-
-addBinary("100", "110010")
