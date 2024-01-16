@@ -19,32 +19,27 @@ Each string does not contain leading zeros except for the zero itself.
 // quick to code, conver to to decimal(BigInt), add, and then convert back to binary
 // Manual coding, adding leading zeros, add each digit taking into account carry
 const addBinary = function (a, b) {
-    [result, leading, carry] = [
-        "",
+    let [result, leading, carry] = [
+        [],
         Math.max(a.length, b.length),
         0
     ];
     a = a.padStart(leading, 0);
     b = b.padStart(leading, 0);
 
-    console.log("a and b " + a + " " + b);
-
     for(let i = leading - 1; i >= 0; i--){
         result[i] = a[i] ^ b[i];
-        let temp = a[i] ^ b[i];
-        console.log("+a[i] and +b[i] " + a[i] + " " + b[i]);
-        console.log("result[i] " + result[i] + " " + temp);
         if(!(result[i])){ 
-            result[i] = (result[i] ^ carry).toString(); // if result is zero carry can be added
+            result[i] = (result[i] ^ carry); // if result is zero carry can be added
             carry = a[i] && b[i];
         } else {
-            if(carry){ // if result and carry are 1
-                result[i] = (result[i] ^ carry).toString();
+            if(carry == 1){ // if result and carry are 1
+                result[i] = (result[i] ^ carry);
                 carry = 1;
             }
         }
-        return result;
     }
+    return (carry == 1) ? result.join("").padStart(leading+1, 1) : result.join("");
 };
 
-addBinary("0101011101010", "1101")
+addBinary("100", "110010")
