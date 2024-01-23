@@ -34,7 +34,7 @@ const updateMatrix = function (mat) {
         });
       } else {
         ones.push([i, j]);
-         mat[i][j] = Infinity;
+         // mat[i][j] = Infinity;
         zeroes.forEach((zero) => {
           mat[i][j] = Math.max(
             mat[i][j],
